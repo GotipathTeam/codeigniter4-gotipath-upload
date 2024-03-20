@@ -20,10 +20,10 @@
     <div class="uppy-dashboard"></div>
     <script src="/dist/app.js"></script>
     <script>
-        let videoId = ""; // Here you can set the video id
-        const LibraryId = "c94deedf-edbc-49aa-8805-8f199c017ff"; // Here you can set the library id
-        const ClientId = "92f9d000-5051-4339-9b3a-91f1c2a4c07"; // Here you can set the client id
-        const ApiKey = "y/r2DtLbfjeyrwu4cyZKeJTA/AT1OiuN0v5W+6Ne6jP229LnLVtgAW4OszQgJw5hlU76S"; // Here you can set the api key
+        let videoId = "b952371d-7632-4789-92d6-6e2315017d12";
+        const LibraryId = "c94deedf-edbc-49aa-8805-8f199c017ff";
+        const ClientId = "92f9d000-5051-4339-9b3a-91f1c2a4c07";
+        const ApiKey = "y/r2DtLbfjeyrwu4cyZKeJTA/AT1OiuN0v5W+6Ne6jP229LnLVtgAW4OszQgJw5hlU76S";
 
         // AUTH HEADERS
         const headers = {
@@ -32,7 +32,26 @@
             "X-Auth-ApiKey": ApiKey,
         };
 
+        // // create video  & get video id
+        // const createVideo = async () => {
+        //     const response = await fetch(`https://apistream.gotipath.com/v1/libraries/${LibraryId}/videos`, {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //             ...headers,
+        //         },
+        //         body: JSON.stringify({
+        //             name: "Test Video",
+        //             description: "Test Video Description"
+        //         }),
+        //     });
+        //     const data = await response.json();
+        //     return data.id;
+        // };
 
+        // createVideo().then((id) => {
+        //     videoId = id;
+        // });
 
 
         const uppy = new Uppy({
@@ -57,7 +76,7 @@
             uppy.setFileMeta(file.id, {
                 video_id: videoId,
                 library_id: LibraryId,
-                collection_id: "", // Here you can set the collection id
+                collection_id: "",
             });
         });
     </script>
